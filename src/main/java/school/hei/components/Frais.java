@@ -36,7 +36,7 @@ public class Frais {
         var status2 = "PAID";
         var status3 = "LATE";
         var status4 = "OVERPAID";
-        var status5 = "Null";
+        var status5 = "None";
 
         if (deadline.isBefore(Instant.now())) {
             return status1;
@@ -44,12 +44,13 @@ public class Frais {
         if (deadline.isAfter(Instant.now())) {
             return status3;
         }
-        if (montantAPayer == this.montantAPayer) {
+        if (Etudiant.montantApayer == this.montantAPayer) {
             return status2;
         }
-        if (montantAPayer > this.montantAPayer) {
+        if (Etudiant.montantApayer > this.montantAPayer) {
             return status4;
         }
         return status5;
     }
+
 }
