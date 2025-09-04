@@ -36,7 +36,7 @@ public class Frais {
         var status2 = "PAID";
         var status3 = "LATE";
         var status4 = "OVERPAID";
-        var status5 = "None";
+        var status5 = "Null";
 
         if (deadline.isBefore(Instant.now())) {
             return status1;
